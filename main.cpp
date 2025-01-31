@@ -172,7 +172,18 @@ switch(choice) { //hien thi danh ba
                 cout << "Nhap ten muon thay doi: ";
                 string newNAME;
                 getline(cin, newNAME);
+                //luu ten cu vao bien tam de phong truong hop client chi muon doi sdt
+                string oldName = "";
+                Num.erase(remove(Num.begin(), Num.end(), ' '), Num.end());
+                for(int i = 0; i < storeContacts.size(); i++) {
+                    string checkOldNum = storeContacts[i].number;
+                    checkOldNum.erase(remove(checkOldNum.begin(), checkOldNum.end(), ' '), checkOldNum.end());
+                    if(checkOldNum == Num) {
+                        oldName = storeContacts[i].name;
+                    }
+                }
                 while (!checkDuplicate(newNAME, 1)) {
+                    if(newNAME == oldName) break;
                     cout << "ERROR: Ten " << newNAME << " da ton tai! \n Vui long nhap lai" << endl;
                     getline(cin, newNAME);
                 }
