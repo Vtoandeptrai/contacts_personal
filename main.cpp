@@ -346,7 +346,6 @@ void addNewContact(string& newName, string& newNumber, int& newRelation) {
 
 //tim kiem lien he theo ten
 void searchContact(string& searchName) {
-    //tìm kiếm liên lạc theo tên - Trọng
     string Relation[6] = {"Gia Dinh","Ban be","Thay/ Co","Dong nghiep","Khac"}; 
     //flag
     bool found = false;
@@ -372,7 +371,6 @@ void searchContact(string& searchName) {
 //sua thong tin lien he
 
 void changeInformation(const string& oldNum, string& newName, string& newNumber, int& newRelation) {
-    //thay đổi thông tin theo số điện thoại - Toàn
     ifstream file("/Users/user/Documents/SimpleContacts_/final/Data.txt");
     if (!file.is_open()) {
         cerr << "ERROR: Khong the mo file!" << endl;
@@ -425,7 +423,6 @@ void changeInformation(const string& oldNum, string& newName, string& newNumber,
 //xoa lien he
 
 void deleteContact(string& deleteName) {
-    //xoá liên lạc - Trí
     ifstream file("/Users/user/Documents/SimpleContacts_/final/Data.txt");
     if (!file.is_open()) {
         cerr << "ERROR: Khong the mo file!" << endl;
@@ -474,7 +471,6 @@ void deleteContact(string& deleteName) {
 
 //trich loc lien he theo moi quan he
 void sortByRelation(int& relationShip) {
-    //lọc liên lạc theo mối quan hệ - Toạ
     string Relation[6] = {"Gia dinh", "Ban be", "Thay/ Co", "Dong Nghiep", "Khac"};
     vector<Contacts> filteredContacts;
     
