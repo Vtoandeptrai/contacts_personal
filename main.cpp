@@ -350,16 +350,18 @@ void searchContact(string& searchName) {
     string Relation[6] = {"Gia Dinh","Ban be","Thay/ Co","Dong nghiep","Khac"}; 
     //flag
     bool found = false;
-    for (const auto& contact : storeContacts) {
+    string temp = searchName;
+    temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
+    cout << "-------------------------------" << endl;
+    for (auto& contact : storeContacts) {
         string checkName = contact.name;
         checkName.erase(remove(checkName.begin(), checkName.end(), ' '), checkName.end());
-        searchName.erase(remove(searchName.begin(), searchName.end(), ' '), searchName.end());
-        if (toLowerCase(checkName) == toLowerCase(searchName)) {
+        if(toLowerCase(checkName).find(toLowerCase(temp)) != string::npos){
             cout << "Ten: " << contact.name << endl 
-                 << "So Dien Thoai: " << contact.number << endl
-                 << "Moi quan he: " << Relation[contact.relation-1] << endl;
+                << "So Dien Thoai: " << contact.number << endl
+                << "Moi quan he: " << Relation[contact.relation-1] << endl
+                << "-------------------------------" << endl;
             found = true;
-            break;
         }
     }
     if (!found) {
