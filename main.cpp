@@ -180,6 +180,7 @@ switch(choice) { //hien thi danh ba
                     checkOldNum.erase(remove(checkOldNum.begin(), checkOldNum.end(), ' '), checkOldNum.end());
                     if(checkOldNum == Num) {
                         oldName = storeContacts[i].name;
+                        break;
                     }
                 }
                 while (!checkDuplicate(newNAME, 1)) {
